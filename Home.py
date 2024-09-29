@@ -9,7 +9,7 @@ if "prompt_saved" not in st.session_state:
     st.session_state["prompt_saved"] = False
 
 if st.session_state["prompt_saved"]:
-    st.write("Please upload your context files in the File Upload tab. Reload the webpage to start again.")
+    st.write("Please upload your context files in the File Upload tab. Reload this webpage to start again.")
     exit()
 
 
