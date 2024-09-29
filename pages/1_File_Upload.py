@@ -7,6 +7,13 @@ import tempfile
 
 st.header("File Upload")
 
+if "prompt_saved" not in st.session_state:
+    st.session_state["prompt_saved"] = False
+
+if not st.session_state["prompt_saved"]:
+    st.write("Please set your system prompt before uploading files.")
+    exit()
+
 def setup():
 
     # Select OpenAI model

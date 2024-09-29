@@ -2,6 +2,16 @@ import streamlit as st
 
 st.header("Chat")
 
+if "prompt_saved" not in st.session_state:
+    st.session_state["prompt_saved"] = False
+
+if "files_uploaded" not in st.session_state:
+    st.session_state["files_uploaded"] = False
+
+if not st.session_state["prompt_saved"] or not st.session_state["files_uploaded"]:
+    st.write("Please set your system prompt and upload files before chatting.")
+    exit()
+
 # Initialise chat history
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = [{"role": "assistant", "content": "Hi! What are we discussing today?"}]
